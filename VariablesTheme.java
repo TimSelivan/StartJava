@@ -24,14 +24,14 @@ public class VariablesTheme {
         //Расчет соимости товара со скидкой
         System.out.println("\nРасчет стоимости товара со скидкой");
 
-        int prPriceX = 100;
-        int prPriceY = 200;
+        int priceX = 100;
+        int priceY = 200;
         float discountRate = 0.11f;
 
         System.out.print("Сумма товаров со скидкой ");
-        System.out.println((prPriceX + prPriceY) * (1-discountRate));
+        System.out.println((priceX + priceY) * (1 - discountRate));
         System.out.print("Сумма скидки ");
-        System.out.println((prPriceX + prPriceY) * discountRate);
+        System.out.println((priceX + priceY) * discountRate);
 
         //Вывод на консоль слова JAVA
         System.out.println("\nВывод на консоль слова JAVA");
@@ -74,8 +74,8 @@ public class VariablesTheme {
 
         float z = 0.2f;
 
-        x = x + z;
-        y = y - z;
+        x += z;
+        y -= z;
 
         System.out.println(x);
         System.out.println(y);
@@ -88,52 +88,38 @@ public class VariablesTheme {
         int c = 64;
         int d = 94;
         int e = 95;
-        char aC = 35;
-        char bC = 38;
-        char cC = 64;
-        char dC = 94;
-        char eC = 95;
 
         System.out.print(a);
-        System.out.println(aC);
+        System.out.println((char) a);
         System.out.print(b);
-        System.out.println(bC);
+        System.out.println((char) b);
         System.out.print(c);
-        System.out.println(cC);
+        System.out.println((char) c);
         System.out.print(d);
-        System.out.println(dC);
+        System.out.println((char) d);
         System.out.print(e);
-        System.out.println(eC);
+        System.out.println((char) e);
 
         //Произведение и сумма цифр числа
         System.out.println("\nПроизведение и сумма цифр числа");
 
-        int smNumber = 345;
+        int srcNum = 345;
         int sum = 0;
+        int product = 0;
         int curNum;
 
-        curNum = smNumber % 10;
-        sum = sum + curNum;
-        smNumber = smNumber / 10;
-        curNum = smNumber % 10;
-        sum = sum + curNum;
-        smNumber = smNumber / 10;
-        sum = sum + smNumber;
+        curNum = srcNum % 10;
+        sum += curNum;
+        product += curNum;
+        srcNum /= 10;
+        curNum = srcNum % 10;
+        sum += curNum;
+        product *= curNum;
+        srcNum /= 10;
+        sum += srcNum;
+        product *= srcNum;
 
         System.out.println(sum);
-
-        int prNumber = 345;
-        int product = 0;
-        int curNum1;
-
-        curNum1 = prNumber % 10;
-        product = product + curNum1;
-        prNumber = prNumber / 10;
-        curNum1 = prNumber % 10;
-        product = product * curNum1;
-        prNumber = prNumber / 10;
-        product = product * prNumber;
-
         System.out.println(product);
 
         //Вывод на консоль ASCII-арт Дюка
@@ -152,11 +138,11 @@ public class VariablesTheme {
         char cQ = ')';
         char sp = ' ';
 
-        System.out.println(sp + "" + sp + "" + sp + "" + sp + "" + sl + "" + bSl);
-        System.out.println(sp + "" + sp + "" + sp + "" + sl + "" + sp + "" + sp + "" + bSl);
-        System.out.println(sp + "" + sp + "" + sl + "" + ul + "" + oQ + "" + sp + "" + cQ + "" + bSl);
-        System.out.println(sp + "" + sl + "" + sp + "" + sp + "" + sp + "" + sp + "" + sp + "" + sp + "" + bSl);
-        System.out.println(sl + "" + ul + "" + ul + "" + ul + "" + ul + "" + sl + "" + bSl + "" + ul + "" + ul + "" + bSl);
+        System.out.println("" + sp + sp + sp + sp + sl + bSl);
+        System.out.println("" + sp + sp + sp + sl + sp + sp + bSl);
+        System.out.println("" + sp + sp + sl + ul + oQ + sp + cQ + bSl);
+        System.out.println("" + sp + sl + sp + sp + sp + sp + sp + sp + bSl);
+        System.out.println("" + sl + ul + ul + ul + ul + sl + bSl + ul + ul + bSl);
 
         //Отображение количества сотен, десятков и единиц числа
         System.out.println("\nОтображение количества сотен, десятков и единиц числа");
