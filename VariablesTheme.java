@@ -1,5 +1,6 @@
 public class VariablesTheme {
     public static void main(String[] args) {
+        //git test
         //Создание переменных и вывод их значений на консоль
         System.out.println("\nСоздание переменных и вывод их значений на консоль");
 
