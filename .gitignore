@@ -1,2 +1,4 @@
 #folder to ignore
 /out
+/startjava/.idea/
+/StartJava.iml

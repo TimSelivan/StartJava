@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.guess;
+package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 //default Math.random() => [0;100)
 //(0;100] => Math.random[1;101) => (Math.random() * (101 - 1)) + 1
