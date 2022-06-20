@@ -13,16 +13,14 @@ public class CalculatorTest {
 
     boolean a = true;
         while(a) {
-            System.out.println("Введите первое число");
-            calc.setNum1(scan.nextInt());
-            scan.nextLine();
-            System.out.println("Введите знак математической операции");
-            calc.setSign(scan.nextLine().charAt(0));
-            System.out.println("Введите второе число");
-            calc.setNum2(scan.nextInt());
-            calc.calculation();
+            System.out.print("Калькулятор запущен \n Введите математическое выражение через пробел:");
+            String str = scan.nextLine();
+            String[] arguments = str.split(" ");
+            calc.setNum1(Integer.parseInt(arguments[0]));
+            calc.setSign(arguments[1].charAt(0));
+            calc.setNum2(Integer.parseInt(arguments[2]));
+            calc.calculation(); //запуск вычислений
             System.out.println(calc.getResult());
-            scan.nextLine();
             while(true) {
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
                 String response = scan.nextLine();
@@ -33,10 +31,8 @@ public class CalculatorTest {
                     break;
                 } else {
                     System.out.println("Введите корректный ответ");
-                    continue;
                 }
             }
-        continue;
         }
     }
 }

@@ -30,29 +30,26 @@ public class Calculator {
         return result;
     }
 
-    public void calculation() {
+    public float calculation() {
         switch(sign) {
             case '+' :
-                result = num1 + num2;
+                result = Math.addExact(num1, num2);
                 break;
             case '-' :
-                result = num1 - num2;
-                break;
-            case '*' :
-                result = num1 * num2;
-                break;
+                result = Math.subtractExact(num1, num2);
             case '/' :
                 result = num1 / num2;
                 break;
+            case '*' :
+                result = Math.multiplyExact(num1, num2);
+                break;
             case '^' :
-                result = 1;
-                for( int i = num2; i > 0; i--) {
-                    result *= num1;
-                }
+                result = (float) Math.pow(num1, num2);
                 break;
             case '%' :
-                result = num1 % num2;
+                result = Math.floorMod(num1, num2);
                 break;
         }
+        return result;
     }
 }
