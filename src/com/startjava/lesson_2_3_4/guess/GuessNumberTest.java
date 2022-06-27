@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Игра началась!");
-        System.out.println("Введите имя первого игрока:");
+        System.out.println("Игра началась! \nЧтобы угадать число, которое загадал компьютер,\nу каждого игрока есть 10 попыток.");
+        System.out.print("Введите имя первого игрока:");
         Player playerOne = new Player(scan.nextLine());
-        System.out.println("Введите имя второго игрока");
+        System.out.print("Введите имя второго игрока");
         Player playerTwo = new Player(scan.nextLine());
         GuessNumber game = new GuessNumber(playerOne, playerTwo);
 
@@ -18,7 +18,7 @@ public class GuessNumberTest {
             if(answer.equals("yes")) {
             game.gameProcess();
             }
-            System.out.println("Хотите продолжить игру? [yes/no]:");
+            System.out.print("Хотите продолжить игру? [yes/no]:");
             answer = scan.nextLine();
             if(!answer.equals("yes") && !answer.equals("no")) {
                 System.out.println("Введите корректный ответ");
