@@ -68,12 +68,15 @@ public class Shelf {
         System.out.print("Type the name of the book you want to delete: ");
         Scanner scan = new Scanner(System.in);
         String name = scan.nextLine();
-        for(int i = 0; i < books.length; i++) {
+        int i = 0;
+        for(i = 0; i < books.length; i++) {
             if(name.equals(books[i].getName())) {
                 books[i] = null;
                 break;
             }
         }
+        System.arraycopy(books, i + 1, books, i, (books.length - 1 - i));
+        books[books.length - 1] = null;
     }
     public void findTheBook() {
         System.out.println("Type the name of the book: ");
@@ -83,6 +86,8 @@ public class Shelf {
             if(name.equals(books[i].getName())) {
                 System.out.println("Book info: " + books[i].getWriter() + ", " + books[i].getName() + ", " + books[i].getYear());
                 break;
+            } else {
+                System.out.println("No book with this name");
             }
         }
     }
